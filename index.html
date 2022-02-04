@@ -11,8 +11,15 @@
 <canvas></canvas>
 <script src="js/game.js"></script>
 <script>
-  setupCanvas();
+  game = {
+    tileSize: 64,
+    numTiles: 9,
+    uiWidth: 4,
+  };
   let x = y = 0;
+
+  setupCanvas();
+
   document.querySelector('html').onkeypress = e => {
       switch (e.key) {
         case 'w':
