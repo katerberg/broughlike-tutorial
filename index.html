@@ -1,6 +1,41 @@
+<!DOCTYPE html>
+<title>Broughlike</title>
+<style>
+  canvas {
+    outline: 1px solid white;
+  }
+  body {
+    background-color: #ccc;
+  }
+</style>
 <canvas></canvas>
 <script>
-      canvas = document.querySelector("canvas");
-      ctx = canvas.getContext("2d");
-      ctx.fillRect(0,0,20,20,20);
+  const canvas = document.querySelector("canvas");
+  let x = y = 0;
+  const ctx = canvas.getContext("2d");
+  document.querySelector('html').onkeypress = e => {
+      switch (e.key) {
+        case 'w':
+            y--;
+            break;
+        case 's':
+            y++;
+            break;
+        case 'a':
+            x--;
+            break;
+        case 'd':
+            x++;
+            break;
+        default:
+            return;
+      }
+  }
+
+  const draw = () => {
+      ctx.clearRect(0, 0, 1000, 1000);
+      ctx.fillRect(x*20, y*20, 20, 20);
+  };
+
+  setInterval(draw, 15);
 </script>
