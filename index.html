@@ -9,10 +9,10 @@
   }
 </style>
 <canvas></canvas>
+<script src="js/game.js"></script>
 <script>
-  const canvas = document.querySelector("canvas");
+  setupCanvas();
   let x = y = 0;
-  const ctx = canvas.getContext("2d");
   document.querySelector('html').onkeypress = e => {
       switch (e.key) {
         case 'w':
