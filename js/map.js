@@ -24,9 +24,9 @@ function generateTiles() {
 }
 
 function generateLevel() {
-    // tryTo('generate the level', () => {
-        generateTiles();
-    // });
+    tryTo('generate the level', () => {
+        return generateTiles() === getRandomPassableTile().getConnectedTiles().length;
+    });
 }
 
 function getTile(x, y) {
