@@ -9,43 +9,13 @@
   }
 </style>
 <canvas></canvas>
+<!-- Classes -->
+<script src="js/constants.js"></script>
+<script src="js/tiles/tile.js"></script>
+<script src="js/tiles/floor.js"></script>
+<script src="js/tiles/wall.js"></script>
+
+<script src="js/util.js"></script>
 <script src="js/game.js"></script>
-<script>
-  game = {
-    tileSize: 64,
-    numTiles: 9,
-    uiWidth: 4,
-  };
-  spritesheet = new Image()
-  spritesheet.src = 'assets/spritesheet.png'
-  let x = y = 0;
-
-  setupCanvas();
-
-  document.querySelector('html').onkeypress = e => {
-      switch (e.key) {
-        case 'w':
-            y--;
-            break;
-        case 's':
-            y++;
-            break;
-        case 'a':
-            x--;
-            break;
-        case 'd':
-            x++;
-            break;
-        default:
-            return;
-      }
-  }
-
-  const draw = () => {
-      ctx.clearRect(0, 0, 1000, 1000);
-      ctx.drawImage(spritesheet, 0, 0, 16, 16, x * game.tileSize, y * game.tileSize, game.tileSize, game.tileSize);
-      // ctx.fillRect(x*game.tileSize, y*game.tileSize, game.tileSize, game.tileSize);
-  };
-
-  setInterval(draw, 15);
-</script>
+<script src="js/map.js"></script>
+<script src="js/index.js"></script>
