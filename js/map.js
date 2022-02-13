@@ -16,10 +16,17 @@ function generateTiles() {
             }
         }
     }
+    return tiles.reduce((totalCount, row) => {
+        return row.reduce((rowCount, cell) => {
+            return cell.passable ? ++rowCount : rowCount;
+        }, totalCount);
+    }, 0);
 }
 
 function generateLevel() {
-    generateTiles();
+    // tryTo('generate the level', () => {
+        generateTiles();
+    // });
 }
 
 function getTile(x, y) {
