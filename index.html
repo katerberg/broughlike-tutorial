@@ -16,6 +16,8 @@
     numTiles: 9,
     uiWidth: 4,
   };
+  spritesheet = new Image()
+  spritesheet.src = 'assets/spritesheet.png'
   let x = y = 0;
 
   setupCanvas();
@@ -41,7 +43,8 @@
 
   const draw = () => {
       ctx.clearRect(0, 0, 1000, 1000);
-      ctx.fillRect(x*game.tileSize, y*game.tileSize, game.tileSize, game.tileSize);
+      ctx.drawImage(spritesheet, 0, 0, 16, 16, x * game.tileSize, y * game.tileSize, game.tileSize, game.tileSize);
+      // ctx.fillRect(x*game.tileSize, y*game.tileSize, game.tileSize, game.tileSize);
   };
 
   setInterval(draw, 15);

@@ -3,5 +3,5 @@ function setupCanvas() {
   ctx = canvas.getContext("2d");
   canvas.width = game.tileSize * (game.numTiles + game.uiWidth);
   canvas.height = game.tileSize * game.numTiles;
+  ctx.imageSmoothingEnabled = false;
 }
-
